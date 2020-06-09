@@ -24,6 +24,7 @@ namespace IAP.Samples.Tests
         public string IAPClientId { get; }
         public string IAPUri { get; }
         public string IAPTokenExpectedAudience { get; }
+        public string CloudRunUri { get; }
 
         public IAPFixture()
         {
@@ -32,6 +33,7 @@ namespace IAP.Samples.Tests
             IAPUri = GetEnvVarOrThrow("TEST_IAP_URI");
             // The IAP token target audience is of the form /projects/<projectID>/apps/<iap-app-name>
             IAPTokenExpectedAudience = GetEnvVarOrThrow("TEST_IAP_EXPECTED_AUDIENCE");
+            CloudRunUri = GetEnvVarOrThrow("TEST_CLOUD_RUN_URI");
         }
 
         private string GetEnvVarOrThrow(string envVarName) =>
